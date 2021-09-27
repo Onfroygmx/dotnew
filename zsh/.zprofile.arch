@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+# Aur shared build folder
+export BUILDERS_HOME="/srv/builds"
+
+# RUST
+export CARGO_HOME="$BUILDERS_HOME/.cargo"
+export RUSTUP_HOME="$BUILDERS_HOME/.rustup"

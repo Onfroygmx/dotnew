@@ -1,0 +1,30 @@
+# System
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+Torrents
+VirtualBox\ VMs
+
+# Files
+*.zwc
+.DS_Store
+.CFUserTextEncoding
+.zshenv
+
+
+# Folders
+.atom
+.cache
+.dot/.dotgit
+.dot/data
+.dot/plugins
+.ssh
+.vscode
+
+# Files
+.dot/zsh/.passwd

@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+# Disbale session management in macos: Must be done after zshenv and before zshrc
+# Avoids macos to create session folders for history ...
+export SHELL_SESSIONS_DISABLE=1
