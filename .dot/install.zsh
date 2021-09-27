@@ -9,6 +9,7 @@
 #
 # https://patorjk.com/software/taag/#p=display&c=bash&f=Doom&t=Install
 ### Install basic tools
+## zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Onfroygmx/dotnew/master/.dot/install.zsh)"
 
 ## Autoload zsh functions
 #################################################
@@ -42,6 +43,9 @@ find $XDG_CONFIG_HOME -type d -print0 | xargs -0 chmod 700
 mv .dotgit $XDG_CONFIG_HOME
 
 printf "\n$fg[Cyan]Clone external Plugins$reset_color\n"
+
+printf "\n$fg[green]Clone: zsh-users/zsh-autosuggestions$reset_color\n"
+git clone https://github.com/Onfroygmx/zmod.git $PLUGINS_DIR/zmod
 
 printf "\n$fg[green]Clone: zsh-users/zsh-autosuggestions$reset_color\n"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $PLUGINS_DIR/zsh-users/zsh-autosuggestions
