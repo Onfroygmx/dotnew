@@ -54,12 +54,28 @@ git clone https://github.com/zsh-users/zsh-completions.git $PLUGINS_DIR/zsh-user
 printf "\n$fg[green]Clone: zsh-users/zsh-history-substring-search$reset_color\n"
 git clone https://github.com/zsh-users/zsh-history-substring-search.git $PLUGINS_DIR/zsh-users/zsh-history-substring-search
 printf "\n$fg[green]Clone: zsh-users/zsh-syntax-highlighting$reset_color\n"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting
 
 printf "\n$fg[yellow]Install fininshed, restart ZSH$reset_color\n"
 
 # Link configuration files to correct place
-ln -s $XDG_CONFIG_HOME/data/nano/nanorc $HOME/.nanorc
-ln -s $XDG_CONFIG_HOME/data/git/gitconfig $HOME/.gitconfig
-ln -s $XDG_CONFIG_HOME/data/git/gitmessage $HOME/.gitmessage
-ln -s $XDG_CONFIG_HOME/data/git/gitignore_global $HOME/.gitignore_global
+ln -s $XDG_CONFIG_HOME/cfg/nano/nanorc $HOME/.nanorc
+ln -s $XDG_CONFIG_HOME/cfg/git/gitconfig $HOME/.gitconfig
+ln -s $XDG_CONFIG_HOME/cfg/git/gitmessage $HOME/.gitmessage
+ln -s $XDG_CONFIG_HOME/cfg/git/gitignore_global $HOME/.gitignore_global
+
+HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+LESSHISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/less/history"
+MYSQL_HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/mysql/history"
+
+## Create history files and folders if does not exist.
+# $HISTFILE belongs in the data home, not with the configs
+if [[ ! -f "$HISTFILE" ]]; then
+    mkdir -pv "$HISTFILE:h" && touch "$HISTFILE"
+fi
+if [[ ! -f "$LESSHISTFILE" ]]; then
+    mkdir -pv "$LESSHISTFILE:h" && touch "$LESSHISTFILE"
+fi
+if [[ ! -f "$MYSQL_HISTFILE" ]]; then
+    mkdir -pv "$MYSQL_HISTFILE:h" && touch "$MYSQL_HISTFILE"
+fi

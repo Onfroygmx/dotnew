@@ -18,9 +18,9 @@ fi
 
 ## Load custom functions
 # Add current functions dir to fpath and autoload functions
-fpath+=("$ZDOTDIR/functions")
+#fpath+=("$ZDOTDIR/functions")
 # Autoload custom functions
-autoload -Uz $fpath[-1]/*(.:t)
+#autoload -Uz $fpath[-1]/*(.:t)
 
 # Disable all beeps
 setopt no_beep
@@ -34,22 +34,22 @@ builtin source $PLUGINS_DIR/zmod/zmod.zsh
 
 declare -A MODULES
 MODULES=(
-    "aliases"
-    "history"
-    "colored-man"
-    "dircolor"
-    "completion"
+    aliases
+    history
+    colored-man
+    dircolor
+    completion
 )
 
 for module in $MODULES; do
-  zmod load "$MODULE_DIR/$module/$module.zsh" "$module"
+  zmod load "$MODULE_DIR/$module/$module.zsh"
 done
 
 declare -A PLUGINS
 PLUGINS=(
-    "zsh-syntax-highlighting"
-    "zsh-autosuggestions"
-    "zsh-history-substring-search"
+    zsh-users-syntax-highlighting
+    zsh-users-autosuggestions
+    zsh-users-history-substring-search
 )
 
 #
