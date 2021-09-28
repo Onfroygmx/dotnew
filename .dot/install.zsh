@@ -84,4 +84,4 @@ if [[ ! -f "$MYSQL_HISTFILE" ]]; then
 fi
 
 source $PLUGINS_DIR/zmod/zmod.zsh
-zmod compile
+zmod compile $PLUGINS_DIR
