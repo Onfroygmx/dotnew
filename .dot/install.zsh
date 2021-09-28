@@ -82,3 +82,6 @@ fi
 if [[ ! -f "$MYSQL_HISTFILE" ]]; then
     mkdir -pv "$MYSQL_HISTFILE:h" && touch "$MYSQL_HISTFILE"
 fi
+
+source $PLUGINS_DIR/zmod/zmod.zsh
+zmod compile
