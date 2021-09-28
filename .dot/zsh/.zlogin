@@ -2,7 +2,7 @@
 #!/bin/zsh
 
 #@source_plugins $PLUGINS
-for plug in $PLUGS; do
+for plug in $PLUGINS; do
   builtin source "$ZDOTDIR/plugins.d/$plug.zsh"
 done
 

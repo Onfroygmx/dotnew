@@ -44,7 +44,7 @@ mv .dotgit $XDG_CONFIG_HOME
 
 printf "\n$fg[Cyan]Clone external Plugins$reset_color\n"
 
-printf "\n$fg[green]Clone: zsh-users/zsh-autosuggestions$reset_color\n"
+printf "\n$fg[green]Clone: zmod$reset_color\n"
 git clone https://github.com/Onfroygmx/zmod.git $PLUGINS_DIR/zmod
 
 printf "\n$fg[green]Clone: zsh-users/zsh-autosuggestions$reset_color\n"

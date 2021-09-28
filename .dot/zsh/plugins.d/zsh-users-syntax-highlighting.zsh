@@ -1,7 +1,7 @@
 #!/usr/bin/env zshé
 #!/bin/zsh
 
-@source_compile $PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zmod load $PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set highlighters
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)

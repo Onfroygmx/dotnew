@@ -30,9 +30,9 @@ setopt no_beep
 PROMPT='%F{green}%n%f %F{cyan}%(4~|%-1~/.../%2~|%~)%f %F{magenta}%B>%b%f '
 RPROMPT='%(?.%F{green}.%F{red}[%?] - )%B%D{%H:%M:%S}%b%f'#
 
-builtin source $PLUGINS_DIR/zmod/zmod.zsh
+builtin source $PLUGIN_DIR/zmod/zmod.zsh
 
-declare -A MODULES
+#declare -A MODULES
 MODULES=(
     aliases
     history
@@ -45,7 +45,7 @@ for module in $MODULES; do
   zmod load "$MODULE_DIR/$module/$module.zsh"
 done
 
-declare -A PLUGINS
+#declare -A PLUGINS
 PLUGINS=(
     zsh-users-syntax-highlighting
     zsh-users-autosuggestions
