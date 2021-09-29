@@ -15,6 +15,7 @@ VirtualBox\ VMs
 .DS_Store
 .CFUserTextEncoding
 .gitconfig
+.git-credentials
 .gitignore_global
 .gitmessage
 .nanorc
