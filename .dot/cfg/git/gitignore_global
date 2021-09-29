@@ -14,8 +14,12 @@ VirtualBox\ VMs
 *.zwc
 .DS_Store
 .CFUserTextEncoding
+.gitconfig
+.gitignore_global
+.gitmessage
+.nanorc
+.viminfo
 .zshenv
-
 
 # Folders
 .atom
@@ -23,6 +27,7 @@ VirtualBox\ VMs
 .dot/.dotgit
 .dot/data
 .dot/plugins
+.npm
 .ssh
 .vscode
 
