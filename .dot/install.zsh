@@ -59,14 +59,14 @@ git clone https://github.com/zsh-users/zsh-history-substring-search.git $PLUGINS
 printf "\n$fg[green]Clone: zsh-users/zsh-syntax-highlighting$reset_color\n"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting
 
-printf "\n$fg[yellow]Install fininshed, restart ZSH$reset_color\n"
-
+printf "\n$fg[yellow]Link config files to root folder$reset_color\n"
 # Link configuration files to correct place
 ln -s $XDG_CONFIG_HOME/cfg/nano/nanorc $HOME/.nanorc
 ln -s $XDG_CONFIG_HOME/cfg/git/gitconfig $HOME/.gitconfig
 ln -s $XDG_CONFIG_HOME/cfg/git/gitmessage $HOME/.gitmessage
 ln -s $XDG_CONFIG_HOME/cfg/git/gitignore_global $HOME/.gitignore_global
 
+printf "\n$fg[yellow]Create firectory file structure for history management$reset_color\n"
 HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 LESSHISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/less/history"
 MYSQL_HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/mysql/history"
@@ -83,5 +83,8 @@ if [[ ! -f "$MYSQL_HISTFILE" ]]; then
     mkdir -pv "$MYSQL_HISTFILE:h" && touch "$MYSQL_HISTFILE"
 fi
 
+printf "\n$fg[yellow]Compile all source files in plugin folder$reset_color\n"
 source $PLUGINS_DIR/zmod/zmod.zsh
 zmod compile $PLUGINS_DIR
+
+printf "\n$fg[yellow]Install fininshed, restart ZSH$reset_color\n"
