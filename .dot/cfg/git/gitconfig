@@ -2,7 +2,7 @@
     email = onfroy@gmx.com
     name = Onf
 [commit]
-    template = $HOME/.gitmessage
+    template = ~/.gitmessage
 [core]
     editor = nano
     excludesFile = ~/.gitignore_global
