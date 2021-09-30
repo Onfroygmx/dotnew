@@ -41,6 +41,7 @@ MODULES=(
     completion
 )
 
+#Source module files
 for module in $MODULES; do
   zmod load "$MODULE_DIR/$module/$module.zsh"
 done
@@ -51,6 +52,14 @@ PLUGINS=(
     zsh-users-autosuggestions
     zsh-users-history-substring-search
 )
+
+#Source plugin files
+for plug in $PLUGINS; do
+  builtin source "$ZDOTDIR/plugins.d/$plug.zsh"
+done
+
+## Initialize compinit
+run-compinit
 
 #
 # Zprofile

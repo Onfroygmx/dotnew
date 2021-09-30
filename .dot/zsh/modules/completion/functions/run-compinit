@@ -12,6 +12,8 @@ emulate -L zsh; setopt local_options extended_glob
 # Called within .zshrc
 (( $+functions[compinit] )) || autoload -Uz compinit
 
+local start=$EPOCHREALTIME
+
 # if compdump is less than 20 hours old, consider it fresh and shortcut it with `compinit -C`
 #
 # -D ........... disables .zcompudump file
@@ -36,5 +38,9 @@ fi
     zcompile "$ZSH_COMPDUMP"
   fi
 } &!
+
+_ZMOD_modules+="${ZSH_COMPDUMP:t:r} ${start} $EPOCHREALTIME ${ZSH_COMPDUMP}"
+
+unset file start
 
 unsetopt local_options extended_glob
