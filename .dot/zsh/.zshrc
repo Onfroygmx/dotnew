@@ -43,19 +43,19 @@ MODULES=(
 
 #Source module files
 for module in $MODULES; do
-  zmod load "$MODULE_DIR/$module/$module.zsh"
+  zmod load "$MODULE_DIR/$module/$module.zsh" "module/$module"
 done
 
 #declare -A PLUGINS
 PLUGINS=(
-    zsh-users-syntax-highlighting
-    zsh-users-autosuggestions
-    zsh-users-history-substring-search
+    zsh-users/zsh-syntax-highlighting
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-history-substring-search
 )
 
 #Source plugin files
 for plug in $PLUGINS; do
-  builtin source "$ZDOTDIR/plugins.d/$plug.zsh"
+  zmod load "$ZDOTDIR/plugins.d/${plug:t}.zsh" "$plug"
 done
 
 ## Initialize compinit
