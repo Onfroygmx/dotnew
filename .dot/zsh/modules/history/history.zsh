@@ -22,14 +22,14 @@ setopt hist_find_no_dups       # don't display a previously found event
 setopt hist_ignore_all_dups    # delete an old recorded event if a new event is a duplicate
 setopt hist_ignore_dups        # don't record an event that was just recorded again
 setopt hist_ignore_space       # don't record an event starting with a space
-setopt hist_no_store           # don't store history commands
+#setopt hist_no_store           # don't store history commands
 setopt hist_reduce_blanks      # remove superfluous blanks from each command line being added to the history list
 setopt hist_save_no_dups       # don't write a duplicate event to the history file
 setopt hist_verify             # don't execute immediately upon history expansion
 setopt no_share_history        # don't share history between all sessions
 
 HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
-LESSHISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/less/history"
+LESSHISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}"/less/history
 MYSQL_HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/mysql/history"
 
 # you can set $SAVEHIST and $HISTSIZE to anything greater than the ZSH defaults
