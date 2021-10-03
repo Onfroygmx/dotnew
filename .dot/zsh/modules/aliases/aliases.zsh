@@ -12,19 +12,21 @@ alias ls='ls --color=auto --group-directories-first -F'
 alias ll='ls --time-style=+"%d.%m.%Y %H:%M" -l'
 alias la='ll -avh'
 
-## base operation with security
+## Base operation with security
 alias cp='cp -iv'       # Confirm before overwriting something
 alias mv='mv -iv'       # Confirm before overwriting something
 alias rm='rm -iv'       # Confirm before deleting anything
 alias chmod='chmod --preserve-root -v'
 alias chown='chown --preserve-root -v'
 
-#copy and download
+# Ccopy and download
 alias pcp='rsync -r --progress'     # Copy with progress bar and speed
 alias pch='rsync -ah --progress'    # Copy with progress bar and speed
 alias wget='wget --continue --progress=bar --timestamping'
 alias curl='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 
+# utilities
+showpath() print -rC1 -- $path
 
 # Lists the ten most used commands.
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
