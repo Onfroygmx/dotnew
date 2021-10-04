@@ -15,4 +15,4 @@ set functioncolor yellow
 
 
 include /usr/local/share/nano/default.nanorc
-include .dot/plugins/nano-syntax-highighting/*.nanorc
+include ~/.dot/plugins/nano-syntax-highighting/*.nanorc
