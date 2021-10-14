@@ -24,6 +24,11 @@ export XDG_DATA_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"/data
 export ZDOTDIR=${XDG_CONFIG_HOME:-$HOME/.config}/zsh
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"/zsh
 
+function zcompile-many() {
+  local f
+  for f; do zcompile -R -- "$f".zwc "$f"; done
+}
+
 printf "\n$fg[green]Clone: Onfroygmx/zsh$reset_color\n"
 git clone --bare https://github.com/Onfroygmx/dotnew.git $HOME/.dotgit
 git --git-dir=$HOME/.dotgit --work-tree=$HOME checkout
@@ -84,7 +89,10 @@ if [[ ! -f "$MYSQL_HISTFILE" ]]; then
 fi
 
 printf "\n$fg[yellow]Compile all source files in plugin folder$reset_color\n"
-source $PLUGINS_DIR/zmod/zmod.zsh
-zmod compile $PLUGINS_DIR
+#source $PLUGINS_DIR/zmod/zmod.zsh
+#zmod compile $PLUGINS_DIR/**/*.zsh
+@zcompile-many $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting/{zsh-syntax-highlighting.zsh,highlighters/*/*.zsh}
+@zcompile-many $PLUGINS_DIR/zsh-users/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
+@zcompile-many $PLUGINS_DIR/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 printf "\n$fg[yellow]Install fininshed, restart ZSH$reset_color\n"
