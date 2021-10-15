@@ -91,8 +91,8 @@ fi
 printf "\n$fg[yellow]Compile all source files in plugin folder$reset_color\n"
 #source $PLUGINS_DIR/zmod/zmod.zsh
 #zmod compile $PLUGINS_DIR/**/*.zsh
-@zcompile-many $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting/{zsh-syntax-highlighting.zsh,highlighters/*/*.zsh}
-@zcompile-many $PLUGINS_DIR/zsh-users/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
-@zcompile-many $PLUGINS_DIR/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
+zcompile-many $PLUGINS_DIR/zsh-users/zsh-syntax-highlighting/{zsh-syntax-highlighting.zsh,highlighters/*/*.zsh}
+zcompile-many $PLUGINS_DIR/zsh-users/zsh-autosuggestions/{zsh-autosuggestions.zsh,src/**/*.zsh}
+zcompile-many $PLUGINS_DIR/zsh-users/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 printf "\n$fg[yellow]Install fininshed, restart ZSH$reset_color\n"
