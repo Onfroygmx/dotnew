@@ -25,6 +25,7 @@ export PLUGIN_DIR=$XDG_CONFIG_HOME/plugins
 # Set standard paths
 path=(
   /usr/local/opt/coreutils/libexec/gnubin(N)   # Gnu Core utils MacOS
+  /usr/local/opt/findutils/libexec/gnubin(N)   # Gnu Find utils MacOs
   /usr/local/opt/gnu-time/libexec/gnubin(N)    # Gnu-time MacOS
   /usr/local/{sbin,bin}
   /usr/{sbin,bin}
