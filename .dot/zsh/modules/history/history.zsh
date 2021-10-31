@@ -36,4 +36,4 @@ MYSQL_HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/mysql/history"
 # (1000 and 2000 respectively), but if not we make them way bigger.
 # The maximum number of events to save in the history file.
 [[ $SAVEHIST -gt 1000 ]] || SAVEHIST=50000
-[[ $HISTSIZE -gt 2000 ]] || HISTSIZE=100000
+[[ $HISTSIZE -gt 2000 ]] || HISTSIZE=1.5*$SAVEHIST
