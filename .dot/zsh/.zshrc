@@ -14,6 +14,7 @@
 # To launch:
 # ZSH_PROFILE=true zsh -ic zprof
 if [[ "$ZSH_PROFILE" = true ]]; then
+  [[ ! -d "$ZSH_CACHE_DIR/zprof" ]] && mkdir -p "$ZSH_CACHE_DIR/zprof"
   zmodload zsh/zprof
 fi
 
@@ -22,13 +23,14 @@ fi
 #
 # To launch:
 # ZSH_XTRACE=true zsh
+#if [[ $ZSH_XTRACE ]]; then
 if [[ "$ZSH_XTRACE" = true ]]; then
   (( ${+EPOCHREALTIME} )) || zmodload zsh/datetime
   setopt PROMPT_SUBST
   PS4='+$EPOCHREALTIME %N:%i> '
 
   [[ ! -d "$ZSH_CACHE_DIR/xtrace" ]] && mkdir -p "$ZSH_CACHE_DIR/xtrace"
-  logfile=$(mktemp "$ZSH_CACHE_DIR/xtrace"/zsh_profile.XXXXXXXX)
+  logfile=$(mktemp "$ZSH_CACHE_DIR/xtrace"/zsh_xtrace.XXXXXXXX)
   echo "Logging to $logfile"
   exec 3>&2 2>$logfile
 
@@ -84,10 +86,9 @@ run-compinit
 # Zprofile
 #
 if [[ "$ZSH_PROFILE" = true ]]; then
-  now=$(date | awk -F ',' '{ printf "%s %s", $1, $2 }' | awk '{ printf "%s-%s_%s", $2, $3, $5 }')
-  [[ ! -d "$ZSH_CACHE_DIR/zprof" ]] && mkdir -p "$ZSH_CACHE_DIR/zprof"
-  LC_NUMERIC="en_US.UTF-8" zprof >> $ZSH_CACHE_DIR/zprof/$now.zprofile
   LC_NUMERIC="en_US.UTF-8" zprof | awk 'NR == 3 { print "Startup Time: ", $3/$8*100, "ms"}'
+  now=$(date +"%Y-%m-%d_%H:%M:%S")
+  LC_NUMERIC="en_US.UTF-8" zprof >> $ZSH_CACHE_DIR/zprof/$now.zprofile
 fi
 
 if [[ "$ZSH_XTRACE" = true ]]; then
